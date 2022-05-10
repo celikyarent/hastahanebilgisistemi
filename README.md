@@ -1,0 +1,2 @@
+# genotip
+alıştırma serüvenim 
