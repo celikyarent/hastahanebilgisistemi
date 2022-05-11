@@ -1,3 +1,0 @@
-# genotip
-Alıştırma Serüvenim 
-
