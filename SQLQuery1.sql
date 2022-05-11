@@ -112,6 +112,14 @@ INNER JOIN KULLANSUBELERI KS ON KS.KULLANICIADI =K.KULLANICIADI
 WHERE ISLEMYAPABILIR = 0 
 
 
+--kımlık kaydı olup geliş kaydı olmayan hastaların listesi
+
+SELECT  G.DOSYANO , AD ,SOYAD , GELISNO from  KIMLIK K 
+  LEFT JOIN GELISLER G ON  K.DOSYANO = G.DOSYANO
+  WHERE G.DOSYANO IS NULL
+
+HATALAR 
+Column 'GELISLER.DOSYANO' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
 
 
 
