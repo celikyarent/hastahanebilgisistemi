@@ -125,9 +125,17 @@ from GELISLER G INNER JOIN KIMLIK K ON G.DOSYANO = K.DOSYANO
 WHERE AD LIKE 'Ü%' 
 GROUP BY  G.DOSYANO, AD , SOYAD 
 
+--
+SELECT  *  FROM ISLEMLER
+SELECT  * from FIYATLAR
 
---HATALAR 
---Column 'GELISLER.DOSYANO' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+
+--
+
+SELECT F.KOD ,I.ISLEMADI , FIYATADI , katsayı FROM ISLEMLER I
+INNER JOIN FIYATLAR F ON  I.KOD = f.KOD
+WHERE I.ISLEMADI = 'DENEME İŞLEM-2' and FIYATADI = 'onko-c'
+
 
 
 
