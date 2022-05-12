@@ -1,5 +1,5 @@
-   --›zlem Bilgisi Yok Dˆn¸˛¸m kontroll¸
---Belge t¸r¸ 119 ve dˆn¸˛¸m var m˝ 0 ise sorgudaki delete i Áal˝˛t˝r˝n˝z.
+   --√ùzlem Bilgisi Yok D√∂n√º√æ√ºm kontroll√º
+--Belge t√ºr√º 119 ve d√∂n√º√æ√ºm var m√Ω 0 ise sorgudaki delete i √ßal√Ω√æt√Ωr√Ωn√Ωz.
 
 SELECT 
        CASE WHEN EXISTS(SELECT F.YERID FROM FATURA FX WHERE FX.YERID = F.ID AND FX.YERI = 416) THEN 1 ELSE 0 END AS DONUSUM_VARMI,
@@ -10,24 +10,24 @@ FROM
                    INNER JOIN REHBER R ON R.ID = FB.REHBERID
                            INNER JOIN STOKLAR S ON S.ID = F.URUNID
 WHERE 
-       F.IZLEME IN (1,2,5) -- STOK IZLEM TURU 2 VE 5 OLAN ›STENR›SE D›–ER T‹RLER› EKLEYEB›L›RS›N›Z!
+       F.IZLEME IN (1,2,5) -- STOK IZLEM TURU 2 VE 5 OLAN √ùSTENR√ùSE D√ù√êER T√úRLER√ù EKLEYEB√ùL√ùRS√ùN√ùZ!
        AND NOT EXISTS(SELECT * FROM STOKIZLEME SI WHERE F.FATBASID = SI.BASLIKID AND F.ID = SI.SATIRID) -- STOKIZLEMEDE OLMAYAN
-       AND FB.TUR <> 2 -- T‹R‹ DEV›R DIﬁINDAK›
-       AND FB.FATURATARIH >= '2020-01-01 00:00' -- X TAR›H›NDEN SONRA
-       AND FB.DURUM <> 6 -- BELGE DURUMU ›PTAL DIﬁINDAK›
-                   AND FB.TIPI NOT IN (2,3) -- ›ADE VE F›YAT FARKI DIﬁINDAK›
+       AND FB.TUR <> 2 -- T√úR√ú DEV√ùR DI√ûINDAK√ù
+       AND FB.FATURATARIH >= '2020-01-01 00:00' -- X TAR√ùH√ùNDEN SONRA
+       AND FB.DURUM <> 6 -- BELGE DURUMU √ùPTAL DI√ûINDAK√ù
+                   AND FB.TIPI NOT IN (2,3) -- √ùADE VE F√ùYAT FARKI DI√ûINDAK√ù
 ORDER BY 2
---ANADEPO ›RSAL›YE VE FATURA(14,15) DA ›ZLEM G÷Z‹KM‹YOR AMA LOT VARSA BUNU «ALIﬁTIR YUKARIDAK› SORGUDA 119 KONS›NYE DIﬁINDAK› ›«›N YAPILABILIR «÷Z‹M 
+--ANADEPO √ùRSAL√ùYE VE FATURA(14,15) DA √ùZLEM G√ñZ√úKM√úYOR AMA LOT VARSA BUNU √áALI√ûTIR YUKARIDAK√ù SORGUDA 119 KONS√ùNYE DI√ûINDAK√ù √ù√á√ùN YAPILABILIR √á√ñZ√úM 
 
 INSERT INTO STOKIZLEME(STOKID,BELGETUR,BASLIKID,SATIRID,IZLEMTUR,KALAN,YER,YERID,EKLEYEN,EKLEMETARIHI,DONUSID,ADET,SERILOTID)VALUES(6444,14,127115,1677505,5,0,0,0,2,GETDATE(),0,0,13247)
 
 
 INSERT INTO STOKIZLEMEDEPO (IZLEMID,DEPOID,ADET)VALUES
-('irsaliye insert Áal˝˛t˝ktan sonra ona gelen ˝d buraya gelecek',1,'-1')
+('irsaliye insert √ßal√Ω√æt√Ωktan sonra ona gelen √Ωd buraya gelecek',1,'-1')
 
-INSERT INTO STOKIZLEME(STOKID,BELGETUR,BASLIKID,SATIRID,IZLEMTUR,KALAN,YER,YERID,EKLEYEN,EKLEMETARIHI,DONUSID,ADET,SERILOTID)VALUES(6444,15,127117,1677515,5,1,0,0,2,GETDATE() ,'irsaliye insert Áal˝˛t˝ktan sonra ona gelen ˝d buraya gelecek',1,13247)
+INSERT INTO STOKIZLEME(STOKID,BELGETUR,BASLIKID,SATIRID,IZLEMTUR,KALAN,YER,YERID,EKLEYEN,EKLEMETARIHI,DONUSID,ADET,SERILOTID)VALUES(6444,15,127117,1677515,5,1,0,0,2,GETDATE() ,'irsaliye insert √ßal√Ω√æt√Ωktan sonra ona gelen √Ωd buraya gelecek',1,13247)
 INSERT INTO STOKIZLEMEDEPO (IZLEMID,DEPOID,ADET)VALUES
-('USTEK› ›NSERT «ALISTIKTAN SONRAK› OLUﬁAN ID', 1	,0)
+('USTEK√ù √ùNSERT √áALISTIKTAN SONRAK√ù OLU√ûAN ID', 1	,0)
 --ID atan sorgu
 
 SELECT 
@@ -42,7 +42,7 @@ FROM
 
 
 	   SELECT*FROM STOKLAR WHERE ID=6444
---A˛a˝daki sorgu ile ilgili kod u yaz˝p stok kaleminin konsinye belge kalan toplam˝n˝ gˆrebilirsiniz.
+--A√æa√∞√Ωdaki sorgu ile ilgili kod u yaz√Ωp stok kaleminin konsinye belge kalan toplam√Ωn√Ω g√∂rebilirsiniz.
 
 SELECT 
        SUM(SI.KALAN) AS TOPLAM_KALAN
@@ -52,7 +52,7 @@ WHERE
        S.KOD = '100-10351-012'
        AND SI.BELGETUR = 119
 
----- SKT-LOT Takibi (Konsinye) raporundaki lot toplamlar˝ ile STOKDURUMIZLEME tablosundaki lot kalan farklar˝n˝ listelemektedir.
+---- SKT-LOT Takibi (Konsinye) raporundaki lot toplamlar√Ω ile STOKDURUMIZLEME tablosundaki lot kalan farklar√Ωn√Ω listelemektedir.
 SELECT
        ID,
        LOTID,
@@ -88,7 +88,7 @@ GROUP BY
 HAVING
        SUM(X.KALAN) <> SDI.KALAN
 
--- STOKIZLEME tablosundaki ilgili stok kodu ve lot numaras˝na gˆre belge t¸rlerine gˆre toplam adetler listelenir.
+-- STOKIZLEME tablosundaki ilgili stok kodu ve lot numaras√Ωna g√∂re belge t√ºrlerine g√∂re toplam adetler listelenir.
 SELECT 
        SI.BELGETUR,
        SUM(ADET)
@@ -101,7 +101,7 @@ WHERE
 GROUP BY
        SI.BELGETUR
 
--- «IKIﬁ DEPOSU ANADEPO OLUP KAYNA–I KONS›NYE OLAN FATURA ID LERI
+-- √áIKI√û DEPOSU ANADEPO OLUP KAYNA√êI KONS√ùNYE OLAN FATURA ID LERI
 
 SELECT 
        DISTINCT FB.ID
@@ -111,7 +111,7 @@ WHERE
        FB.CIKISDEPO = 1
        AND F.YERI = 462
 
---STOKIZLEME tablosu ile stok izlem (STOKDURUMIZLEME) aras˝nda fark olduunda hangi lotta problem olduuna bak˝lmal˝d˝r. Bunun iÁin a˛a˝daki sorgu ile kar˛˝la˛t˝rabilirsiniz.
+--STOKIZLEME tablosu ile stok izlem (STOKDURUMIZLEME) aras√Ωnda fark oldu√∞unda hangi lotta problem oldu√∞una bak√Ωlmal√Ωd√Ωr. Bunun i√ßin a√æa√∞√Ωdaki sorgu ile kar√æ√Ωla√æt√Ωrabilirsiniz.
 
 SELECT 
        LOTNO,
@@ -147,7 +147,7 @@ WHERE
 GROUP BY
        SI.BELGETUR
 
---CIKIS DEPOSU KONSINYE OLUP KAYNA–I KONSINYE OLMAYAN SATIﬁ FATURALARI
+--CIKIS DEPOSU KONSINYE OLUP KAYNA√êI KONSINYE OLMAYAN SATI√û FATURALARI
 SELECT 
        S.KOD,
        FB.*
@@ -160,7 +160,7 @@ WHERE
        AND NOT EXISTS(SELECT * FROM STOKIZLEME SS WHERE SS.ID = SI.DONUSID AND SS.BELGETUR = 119)
        AND FB.CIKISDEPO = 9
 
---Belgenin deposu Konsinye Á˝k˝˛ deposu olup dˆn¸˛en id si stok izlemede olmayan kay˝tlar (Belge kayna˝ yok ya da eksik kay˝tlar)
+--Belgenin deposu Konsinye √ß√Ωk√Ω√æ deposu olup d√∂n√º√æen id si stok izlemede olmayan kay√Ωtlar (Belge kayna√∞√Ω yok ya da eksik kay√Ωtlar)
 --Sorgu 1
 
 SELECT 
@@ -189,7 +189,7 @@ WHERE
 	AND FB.TUR <> 2
 	AND FB.DURUM <> 6
 
---STOKLARDAK› FARKLARI BULMA
+--STOKLARDAK√ù FARKLARI BULMA
 
 SELECT
 S.ID,
@@ -208,7 +208,7 @@ WHERE
        SD.KALAN <> SDI.SDI_KALAN
          AND S.DURUM <>0
 
---STOKIZLEMEDE OLUP FATURA TABLOSUNDA KAYDI OLMAYAN KAYITLAR, STOKIZLEMEDEN S›L›NMEL›D›R.
+--STOKIZLEMEDE OLUP FATURA TABLOSUNDA KAYDI OLMAYAN KAYITLAR, STOKIZLEMEDEN S√ùL√ùNMEL√ùD√ùR.
 SELECT 
 	SORGU = 'DELETE FROM STOKIZLEME WHERE ID = ' + CONVERT(VARCHAR(10),SI.ID),
 	S.KOD,
@@ -234,7 +234,7 @@ DESC
 
 UPDATE SI SET SI.SERILOTID = 13247 FROM STOKIZLEME SI WHERE ID --IN (399494,410316,410216,409856,408471,408204,407483,407175,406911,406100,406053)
 
---M›KTARSAL KARﬁILAﬁTIRMA
+--M√ùKTARSAL KAR√ûILA√ûTIRMA
 SELECT 
 	S.KOD,
 	S.STOKADI,
@@ -254,7 +254,7 @@ GROUP BY
 HAVING
 	ABS(F.ADET) <> SUM(SI.ADET)
 
-	-- stok˝zleme ile stok˝zleme adet
+	-- stok√Ωzleme ile stok√Ωzleme adet
 
 SELECT SS.*,S.KOD, S.URUNNO, S.STOKADI FROM
 (
