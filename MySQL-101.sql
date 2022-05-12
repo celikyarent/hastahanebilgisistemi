@@ -153,5 +153,19 @@ Sorular
 3. işlem tanımı olup hiç fiyat tanımı yapılmamıl işlemler 
 4. Kurumlara göre hasta sayısı
 
+ SELECT  count (G.ID ) AS gelıssayısı,  K.AD , K.SOYAD , G.KURUM
+   FROM PARA P 
+	INNER JOIN  GELISLER G   ON G.DOSYANO = P.DOSYANO AND G.GELISNO = P.GELISNO
+	INNER JOIN KIMLIK K  ON G.DOSYANO = K.DOSYANO
+	left JOIN Doktor D1 ON D1.DOKTORKOD = P.DR2 
 
+	GROUP BY G.DOSYANO  , K.AD , K.SOYAD ,  G.KURUM,  P.ACIKLAMA 
+	orde
+
+
+
+
+	
+
+-- Kurumlara göre hasta sayısı
 
