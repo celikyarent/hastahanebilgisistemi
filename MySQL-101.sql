@@ -161,11 +161,9 @@ Sorular
 
 	GROUP BY G.DOSYANO  , K.AD , K.SOYAD ,  G.KURUM,  P.ACIKLAMA 
 	orde
-
-
-
-
 	
-
+	
+--order by g.kurum 
+--count ıd ye göre sırala
 -- Kurumlara göre hasta sayısı
 
