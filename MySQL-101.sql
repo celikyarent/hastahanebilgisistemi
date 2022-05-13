@@ -135,8 +135,6 @@ WHERE I.ISLEMADI = 'DENEME İŞLEM-2' and FIYATADI = 'onko-c'
    GROUP BY G.KURUM, KURUM
 	
 	
-	
---Sorular 
 -- Nisan Ve mayıs aylarında gelen 25 yaşında olan   hastaların listesi 
    SELECT G.DOSYANO , G.GELISNO, G.GIRISTARIH, K.AD , K.SOYAD ,  YAS = Year(GETDATE( ) ) - Year ( k.DOGUMTARIH )   , G.KURUM
    FROM GELISLER G   
@@ -151,7 +149,7 @@ WHERE I.ISLEMADI = 'DENEME İŞLEM-2' and FIYATADI = 'onko-c'
 							--•Year(DogumTarihi) : Tabloda olusturduğumuz Doğum Tarihi alır.
 							--•as Yas : Çıkan sonucu Yas isimli yeni bir sütuna yazdırdık. 
 
---2. 25 ve 50 yaşınları arasındaki en çok gelen ilk 10 hasta 
+--25 ve 50 yaşınları arasındaki en çok gelen ilk 10 hasta 
  SELECT TOP 10 
 	k.dosyano ,count (G.GELISNO ) AS SAYI ,  k.ad , k.soyad , Year(GETDATE( ) ) - Year ( k.DOGUMTARIH ) 
    FROM  GELISLER G
@@ -159,3 +157,20 @@ WHERE I.ISLEMADI = 'DENEME İŞLEM-2' and FIYATADI = 'onko-c'
    WHERE Year(GETDATE( ) ) - Year ( k.DOGUMTARIH )  >  25 AND Year(GETDATE( ) ) - Year ( k.DOGUMTARIH ) < 50
   GROUP BY k.dosyano , k.ad , k.soyad , Year(GETDATE( ) ) - Year ( k.DOGUMTARIH ) 
   ORDER BY SAYI DESC 
+
+-- işlem tanımı olup hiç fiyat tanımı yapılmamıl işlemler 
+SELECT * FROM ISLEMLER
+SELECT * FROM PARA 
+
+SELECT  I.ISLEMADI , TUTAR  from  PARA  P 
+  LEFT JOIN ISLEMLER I ON  P.KOD = I.KOD
+  WHERE TUTAR IS NULL
+   
+
+--- Kurumlara göre hasta sayısı
+ SELECT   G.KURUM ,COUNT(G.DOSYANO) AS gelıssayısı
+   FROM PARA P 
+	INNER JOIN  GELISLER G   ON G.DOSYANO = P.DOSYANO AND G.GELISNO = P.GELISNO
+	INNER JOIN KIMLIK K  ON G.DOSYANO = K.DOSYANO
+   GROUP BY G.KURUM, KURUM
+	
