@@ -245,3 +245,7 @@ INNER JOIN  KIMLIK K on K.DOSYANO = G.DOSYANO
     WHERE   TEDAVI = 'Yatarak'  AND MONTH(G.GIRISTARIH) = 2
 
 
+--HASTANIN  adını, soyadını ve yaşını listeleyin.
+
+SELECT AD, SOYAD, DATEDIFF(year,DOGUMTARIH,GETDATE()) from KIMLIK
+
