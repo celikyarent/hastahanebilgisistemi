@@ -134,3 +134,28 @@ WHERE I.ISLEMADI = 'DENEME İŞLEM-2' and FIYATADI = 'onko-c'
 	INNER JOIN KIMLIK K  ON G.DOSYANO = K.DOSYANO
    GROUP BY G.KURUM, KURUM
 	
+	
+	
+--Sorular 
+-- Nisan Ve mayıs aylarında gelen 25 yaşında olan   hastaların listesi 
+   SELECT G.DOSYANO , G.GELISNO, G.GIRISTARIH, K.AD , K.SOYAD ,  YAS = Year(GETDATE( ) ) - Year ( k.DOGUMTARIH )   , G.KURUM
+   FROM GELISLER G   
+	INNER JOIN KIMLIK K  ON G.DOSYANO = K.DOSYANO
+   WHERE 
+	G.GIRISTARIH >='2022-04-01' AND G.GIRISTARIH <='2022-05-31 23:59' AND Year(GETDATE( ) ) - Year ( k.DOGUMTARIH ) = 26
+
+-- Yaş hesaplama
+
+							--Select Adi,Soyadi,Year(GETDATE( ) ) -Year( DogumTarihi ) as Yas from Calisanlar
+							--•Year(GETDATE)( ) : Bugünün tarihini alır.
+							--•Year(DogumTarihi) : Tabloda olusturduğumuz Doğum Tarihi alır.
+							--•as Yas : Çıkan sonucu Yas isimli yeni bir sütuna yazdırdık. 
+
+--2. 25 ve 50 yaşınları arasındaki en çok gelen ilk 10 hasta 
+ SELECT TOP 10 
+	k.dosyano ,count (G.GELISNO ) AS SAYI ,  k.ad , k.soyad , Year(GETDATE( ) ) - Year ( k.DOGUMTARIH ) 
+   FROM  GELISLER G
+   INNER JOIN KIMLIK K  ON K.DOSYANO  = G.DOSYANO 
+   WHERE Year(GETDATE( ) ) - Year ( k.DOGUMTARIH )  >  25 AND Year(GETDATE( ) ) - Year ( k.DOGUMTARIH ) < 50
+  GROUP BY k.dosyano , k.ad , k.soyad , Year(GETDATE( ) ) - Year ( k.DOGUMTARIH ) 
+  ORDER BY SAYI DESC 
