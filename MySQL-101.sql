@@ -251,5 +251,24 @@ SELECT AD, SOYAD, YAS = DATEDIFF(year,DOGUMTARIH,GETDATE())  from KIMLIK
 
  --VATANDASLIKNO  null olan öğrencileri listeleyin. (insert sorgusu ile girilen 3 HASTA listelenecektir)
 
- 
 select * from KIMLIK where VATANDASLIKNO is null
+
+
+
+ --DOSYANODAN KIMLIK İŞLEMİNİ SİLME 
+DELETE FROM  KIMLIK where DOSYANO ='00000105'
+
+
+
+--bir hasta aynı doktora kaç kere gelmiş 
+select * from kımlık
+select * from GELISLER
+select * from doktor
+
+
+--bir DOKTORA kaç kere gelinmiş 
+
+select D.DOKTOR  , COUNT (G.GELISNO) AS GELISSAYISI from GELISLER G
+INNER JOIN DOKTOR D ON D.DOKTORKOD = G.DOKTORKOD
+GROUP BY D.DOKTOR
+
