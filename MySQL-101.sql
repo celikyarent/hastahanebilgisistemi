@@ -174,3 +174,57 @@ SELECT  I.ISLEMADI , TUTAR  from  PARA  P
 	INNER JOIN KIMLIK K  ON G.DOSYANO = K.DOSYANO
    GROUP BY G.KURUM, KURUM
 	
+	
+	
+ --İkinci harfi A olan hastaları listeleyiniz.
+
+  select
+      K.AD , K.SOYAD 
+  from 
+     GELISLER G
+   INNER JOIN KIMLIK K  ON K.DOSYANO = G.DOSYANO
+ where AD  like '_A%'
+
+--Ogrenci tablosundan Rastgele bir öğrenci seçiniz.
+
+SELECT  top 1  
+    AD ,SOYAD , DOGUMTARIH ,  YAS = Year(GETDATE( ) ) - Year (DOGUMTARIH ) , VATANDASLIKNO 
+FROM 
+    KIMLIK
+order by newid()
+
+
+
+--CİNSİYETİ ERKEK olan  en genç öğrenciyi listeyin.
+
+SELECT  TOP 1 
+AD ,SOYAD, DOGUMTARIH 
+FROM
+KIMLIK
+WHERE CINSIYET='ERKEK'  and   DOGUMTARIH  IS NOT NULL
+ORDER BY  DOGUMTARIH DESC
+
+
+
+-- HASTA tablosundaki öğrencilerden adı A, D ve K ile başlayan öğrencileri listeleyiniz.
+  SELECT AD, SOYAD from KIMLIK where AD like '[MY]%'
+
+
+
+ --KIMLIK  tablosunDA  EBRU TAŞDELEN , LALE KURNAZ , KERİMAN ÇELİK HAKAN MELİKE VE  HATİCE YAYLA isimli HASTALARI  ekleyin.
+
+ SELECT * FROM KIMLIK 
+ 
+INSERT INTO  KIMLIK  (DOSYANO ,AD,SOYAD,CINSIYET) 
+       values('Y01','EBRU','TAŞDELEN','KIZ'),('Y02','LALE','KURNAZ','KIZ'),('Y03','KERİMAN','ÇELİK ','KIZ'),('Y04','HAKAN','MELİKE','ERKEK'),('Y05','HATİCE','YAYLA','KIZ')
+
+
+
+
+ --DOSYANO ='Y01' - DOSYANO ='Y05' arasındaki Hastanın  dogum tarihini güncelle.
+
+update KIMLIK set DOGUMTARIH='2020-09-23' where DOSYANO ='Y01'
+update KIMLIK set DOGUMTARIH='2020-09-15' where DOSYANO ='Y02'
+update KIMLIK set DOGUMTARIH='2020-09-16' where DOSYANO ='Y03'
+update KIMLIK set DOGUMTARIH='2020-09-17' where DOSYANO ='Y04'
+update KIMLIK set DOGUMTARIH='2020-09-18' where DOSYANO ='Y05'
