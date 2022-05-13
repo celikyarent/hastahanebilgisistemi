@@ -137,33 +137,3 @@ INNER JOIN FIYATLAR F ON  I.KOD = f.KOD
 WHERE I.ISLEMADI = 'DENEME İŞLEM-2' and FIYATADI = 'onko-c'
 
 
-Sorular 
-1. Nisan Ve mayıs aylarında 25 yaşında olan   hastaların listesi 
-   SELECT G.DOSYANO , G.GELISNO, K.AD , K.SOYAD , CONVERT(INT,GETDATE()-'1997-01-01')/365 AS YAS , G.KURUM,  P.ACIKLAMA 
-   FROM PARA P 
-	INNER JOIN  GELISLER G   ON G.DOSYANO = P.DOSYANO AND G.GELISNO = P.GELISNO
-	INNER JOIN KIMLIK K  ON G.DOSYANO = K.DOSYANO
-	left JOIN Doktor D1 ON D1.DOKTORKOD = P.DR2
-     WHERE 
-	G.GIRISTARIH >='2022-04-01' AND G.GIRISTARIH <='2022-05-31 23:59' 
-
-2. 25 ve 50 yaşınları arasındaki en çok gelen ilk 10 hasta 
-
-
-3. işlem tanımı olup hiç fiyat tanımı yapılmamıl işlemler 
-4. Kurumlara göre hasta sayısı
-
- SELECT  count (G.ID ) AS gelıssayısı,  K.AD , K.SOYAD , G.KURUM
-   FROM PARA P 
-	INNER JOIN  GELISLER G   ON G.DOSYANO = P.DOSYANO AND G.GELISNO = P.GELISNO
-	INNER JOIN KIMLIK K  ON G.DOSYANO = K.DOSYANO
-	left JOIN Doktor D1 ON D1.DOKTORKOD = P.DR2 
-
-	GROUP BY G.DOSYANO  , K.AD , K.SOYAD ,  G.KURUM,  P.ACIKLAMA 
-	orde
-	
-	
---order by g.kurum 
---count ıd ye göre sırala
--- Kurumlara göre hasta sayısı
-
