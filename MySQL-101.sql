@@ -248,3 +248,8 @@ INNER JOIN  KIMLIK K on K.DOSYANO = G.DOSYANO
 --HASTANIN  adını, soyadını ve yaşını listeleyin.
 
 SELECT AD, SOYAD, YAS = DATEDIFF(year,DOGUMTARIH,GETDATE())  from KIMLIK
+
+ --VATANDASLIKNO  null olan öğrencileri listeleyin. (insert sorgusu ile girilen 3 HASTA listelenecektir)
+
+ 
+select * from KIMLIK where VATANDASLIKNO is null
