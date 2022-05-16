@@ -1,1 +1,11 @@
-cdxsvgf
+İşlemler ve çözümleri
+
+
+
+---mr merkezi ekleme , silme   gelişler ekranında eklemeler silmeler yapılacak.
+
+    seçenekler - opsiyonlar - genel liste ayarlama 
+    
+    
+    
+    
