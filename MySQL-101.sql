@@ -117,7 +117,7 @@ SELECT  * from FIYATLAR
 
 
 --
-
+-- deneme 2  olan işlemadı onko2  olan fiyatlara 10tl ekle 
 SELECT F.KOD ,I.ISLEMADI , FIYATADI , katsayı FROM ISLEMLER I
 INNER JOIN FIYATLAR F ON  I.KOD = f.KOD
 WHERE I.ISLEMADI = 'DENEME İŞLEM-2' and FIYATADI = 'onko-c'
