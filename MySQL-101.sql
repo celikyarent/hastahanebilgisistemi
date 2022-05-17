@@ -189,6 +189,11 @@ FROM
     KIMLIK
 order by newid()
 
+--Sistemde bulunan ‘B’ kodlu tüm işlemlerin ‘ÜSKÜDAR’ ve ‘KATKIÜSKÜDAR’ fiyatlarını 10 TL yükseltmenizi rica ederim.
+
+SELECT F.KOD ,I.ISLEMADI , FIYATADI , YENI = katsayı +10 FROM ISLEMLER I
+INNER JOIN FIYATLAR F ON  I.KOD = f.KOD
+WHERE F.KOD LIKE 'B%' and  FIYATADI = ‘ÜSKÜDAR’ AND  FIYATADI = ‘KATKIÜSKÜDAR’ 
 
 
 --CİNSİYETİ ERKEK olan  en genç öğrenciyi listeyin.
