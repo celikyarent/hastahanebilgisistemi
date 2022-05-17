@@ -3,6 +3,11 @@ SELECT * FROM KIMLIK
 SELECT * FROM PARA
 SELECT * FROM DOKTOR
 
+
+---bilginin belli bir kısmını yazacaksan or mantığı kullanılabilir 
+(fıyatadı lıke 'üskü%' or fıyadadı lıke 'xx%') 
+
+
 --DOKTOR İSMİ DR. İLE BAŞLAYAN HASTALARIN GELİŞ SAYISI 
 SELECT  -- COUNT(GELISNO) 
 * FROM GELISLER 
