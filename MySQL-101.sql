@@ -193,8 +193,7 @@ order by newid()
 
 SELECT F.KOD ,I.ISLEMADI , FIYATADI , YENI = katsayı +10 FROM ISLEMLER I
 INNER JOIN FIYATLAR F ON  I.KOD = f.KOD
-WHERE F.KOD LIKE 'B%' and  FIYATADI = ‘ÜSKÜDAR’ AND  FIYATADI = ‘KATKIÜSKÜDAR’ 
-
+WHERE F.KOD LIKE 'B%' and  FIYATADI IN (‘ÜSKÜDAR,‘KATKIÜSKÜDAR’ )
 
 --CİNSİYETİ ERKEK olan  en genç öğrenciyi listeyin.
 
