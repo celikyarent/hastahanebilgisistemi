@@ -1,18 +1,24 @@
+---terminal giriş hatası 
+        delete from GENOTIP
+        WHERE CONVERT(INT,SABIT) between 1000 and 9999
+        (bilgisayar yenimi lisans(5) almanız gerekir.
+
 
 ---opsiyon ekleme çıkarma değiştirme 
-secenekler , opsiyonlar , genel liste ayarlama , işlemi bul ekle düzenle veya sil kaydet ,  sistemi kapat tekrar aç .
+        secenekler , opsiyonlar , genel liste ayarlama , işlemi bul ekle düzenle veya sil kaydet ,  sistemi kapat tekrar aç .
 
 --- iki  Kayıt birleştirme (dosyano birleştirme)
-Dosya kodlarını ayrı ayrı bul sonra kaç geliş var bak daha sonra hasta ismini soyismini ekranda ara , bir dosyanoya tıkla ctrl ile diğerini seç ,
-sağ tık kayıtları birleşrtirme yap BEKLE 
+        Dosya kodlarını ayrı ayrı bul sonra kaç geliş var bak daha sonra hasta ismini soyismini ekranda ara , bir dosyanoya tıkla ctrl ile diğerini seç ,
+        sağ tık kayıtları birleşrtirme yap BEKLE 
 
 
---- şifreler medula3 de 
+--- şifreler 
+        medula3 de 
 
 ---vısa işlei yapılınca fatura çıkıyor 
-pos seçildiğinde ne gelsin . fatura kesilmesini seç .
+       pos seçildiğinde ne gelsin . fatura kesilmesini seç .
 
 ---Tahsilat kaydederken çıkan taahhütname uyarısını, işlem eklemeden önceye
-secenekler , tahsilat , katkı tahsilatından önce Taahütname kontrolü günlük kontrol seçililr.
+       secenekler , tahsilat , katkı tahsilatından önce Taahütname kontrolü günlük kontrol seçililr.
 
 
