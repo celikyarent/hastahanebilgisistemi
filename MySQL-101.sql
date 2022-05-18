@@ -3,6 +3,11 @@ SELECT * FROM KIMLIK
 SELECT * FROM PARA
 SELECT * FROM DOKTOR
 
+---tarih arasında hasta giriş tutar bilgileri
+
+SELECT P. DOSYANO, P. GELISNO, ADSOTAD = AD + ' ' +SOYAD, TARIH, PAKET, TUR, KOD, ACIKLAMA, TUTAR 
+FROM PARA P INNER JOIN KIMLIK K ON P.DOSYANO=K.DOSYANO
+WHERE TARIH BETWEEN '2022-05-01' AND '2022-05-18 23:59'
 
 ---bilginin belli bir kısmını yazacaksan or mantığı kullanılabilir 
 (fıyatadı lıke 'üskü%' or fıyadadı lıke 'xx%') 
