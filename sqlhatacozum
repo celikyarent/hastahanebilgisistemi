@@ -22,3 +22,11 @@
        secenekler , tahsilat , katkı tahsilatından önce Taahütname kontrolü günlük kontrol seçililr.
 
 
+--- ilaç ekleme 
+Muayahane modülü > Araçlar > Reçete ilaç > barkod no ile ilaç listesinden bak yoksa ekleme yap manuel olarak 
+daha sonra
+deneme hastası üzerinden sağda order bölümünden  ilaç aramada tekrar kontrol et .
+
+
+--- doktor yetkisi verme 
+kullanıcı modülü  >  kayıt kabul  >  dökümler >  doktor >  iç dış hizmet rapor >  evet 
