@@ -5,12 +5,17 @@ SELECT * FROM DOKTOR
 
 
 
+
 ---Belirtilen faturaları iptal edebilir misiniz?
 --AFT2022000001836
-   SELECT status, * FROM INVOICE 
-   WHERE InvoiceNo ='AFT2022000001836'
-      UPDATE  INVOICE   SET  STATUS ='1024'
+   	UPDATE F  SET  KIME ='İPTAL'
+  	 --SELECT EFATURADURUM,*
+  	 FROM FATBASLIK F
+	WHERE EFATURANO ='AFT2022000001836'
 
+  	 SELECT status, * FROM INVOICE 
+   	WHERE InvoiceNo ='AFT2022000001836'
+      	UPDATE  INVOICE   SET  STATUS ='1024'
 
 ---tarih arasında hasta giriş tutar bilgileri
 
