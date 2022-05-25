@@ -4,6 +4,9 @@ SELECT * FROM PARA
 SELECT * FROM DOKTOR
 
 
+--Serpil kullanıcı adı olan kişinin şifresi 
+		SELECT * FROM KULLAN 
+		WHERE KULLANICIAFI LIKE 'SERPİL%'
 
 
 ---Belirtilen faturaları iptal edebilir misiniz?
