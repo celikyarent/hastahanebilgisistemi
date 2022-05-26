@@ -1,3 +1,9 @@
+---güncelleme , kurulum 
+Genotıp kullanılan bir  pcden gen2005 dosyasını al flashbelleklerine yapıştır daha sonra onlardan kurulacak pcya flashı takmalarını söyle sonra eski dosyayı sil yapıştır
+
+
+
+
 ---terminal giriş hatası 
         delete from GENOTIP
         WHERE CONVERT(INT,SABIT) between 1000 and 9999
@@ -11,8 +17,8 @@
         Dosya kodlarını ayrı ayrı bul sonra kaç geliş var bak daha sonra hasta ismini soyismini ekranda ara , bir dosyanoya tıkla ctrl ile diğerini seç ,
         sağ tık kayıtları birleşrtirme yap BEKLE 
 
----yetki verme / doktor hakedişleri görünmesi
-kullanıcı modülü  >  kayıt kabul  > dökümler  > doktorlar  > doktor hakediş olsun ... şubeler  > yetki versin 
+--- doktor hakedişleri görünmesi
+kullanıcı modülü  >  kayıt kabul  > dökümler  > doktorlar  > doktor hakediş olsun 
 
 --- şifreler 
         medula3 de 
