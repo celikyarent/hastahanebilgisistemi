@@ -2,8 +2,6 @@
 Genotıp kullanılan bir  pcden gen2005 dosyasını al flashbelleklerine yapıştır daha sonra onlardan kurulacak pcya flashı takmalarını söyle sonra eski dosyayı sil yapıştır
 
 
-
-
 ---terminal giriş hatası 
         delete from GENOTIP
         WHERE CONVERT(INT,SABIT) between 1000 and 9999
