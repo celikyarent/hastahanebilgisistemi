@@ -326,13 +326,13 @@ INNER JOIN DOKTOR D ON D.DOKTORKOD = G.DOKTORKOD
 GROUP BY D.DOKTOR
 
 
---0090098 dosya numarasının 8. Gelişinin 3. Faturasına ATA2022000002182 e-faturanın aktarımının yapılmasını rica ederim.
-UPDATE FATBASLIK SET EFATURANO  =  'ATA2022000002182'
+--0090098 dosya numarasının 8. Gelişinin 3. Faturasına ATA----02182 e-faturanın aktarımının yapılmasını rica ederim.
+UPDATE FATBASLIK SET EFATURANO  =  'ATA----02182'
 WHERE DOSYANO='0090098' AND GELISNO= 8  AND KARTNO = 3  
 
----1093732 dosya numarasının 20.gelişinin  1. Faturasına ATA2022000000195 eklenmesini rica ederim.
+---1093732 dosya numarasının 20.gelişinin  1. Faturasına ATA----02182 eklenmesini rica ederim.
 
-UPDATE FATBASLIK SET EFATURANO  =  'ATA2022000000195'
+UPDATE FATBASLIK SET EFATURANO  =  'AATA----021825'
 WHERE DOSYANO='1093732' AND GELISNO= 20  AND KARTNO = 20  ---(geliş no yu  kartno şeklinde yazacaksın )
 
 --DOSYANO BİLİNEn BİR KİŞİNİN TÜM GELİŞLERİ  KARTNO DOSYANOSU göster
