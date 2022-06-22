@@ -1,3 +1,9 @@
+
+--
+HBS : HASTAHANE BİLGİ SİSTEMİ
+Hbs sistemlerinde çalışma notlarım ektedir. Kurum kuruluşlarla bir bağlantım yoktur.
+
+
 SELECT * FROM GELISLER
 SELECT * FROM KIMLIK 
 SELECT * FROM PARA
